@@ -1,0 +1,14 @@
+
+1. How will you tackle the challenge?
+   I will first parse the input CSV and check if a cell contains a value or a formula. If it's a formula, I will compute it by referencing other cells, considering cell coordinates like A1, B2. I'll store the values in a 2D array to ensure referencing between cells is simple.
+
+2. What type of errors would you check for?
+   - Circular reference: A formula referencing itself or creating an infinite loop.
+   - Out-of-bound errors: A formula referencing a cell that doesn’t exist.
+   - Invalid formulas: Non-numeric or incorrect syntax in the formula.
+   - Empty or malformed input: Handling missing values or irregular CSV structures.
+
+3. How might a user break your code?
+   - By providing formulas that create a circular dependency (e.g., A1 = B1 + A1).
+   - Entering non-numeric values in place of numbers in formulas.
+   - Supplying an invalid CSV format or an empty file.
